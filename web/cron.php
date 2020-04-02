@@ -1,6 +1,6 @@
 <?php
 
-require(__DIR__.'/../vendor/autoload.php');
+require(__DIR__.'/../vendor/autoload.php'); 
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -9,7 +9,6 @@ use Goutte\Client;
 
 
 $app = new Silex\Application();
-
 
 // Register view rendering
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
