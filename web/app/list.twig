@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron text-center">
+  <div class="container">
+    <h1>List Submission Data</h1>
+  </div>
+</div>
+<div class="container">
+ 
+  <div class="row">
+    <div class="col-md-12">
+       <div class="panel panel-default">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Product Name</th>
+                        <th>Short Description</th>
+                        <th>Price</th>
+                        <th>Last update</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for n in products %}
+                        <tr>
+                        <th scope="row">{{ loop.index }}</th>
+                        <td>{{ n.name }}</td>
+                        <td>{{ n.description }}</td>
+                        <td>{{ n.price }}</td>
+                        <td>{{ n.last_update }}</td>
+                        <td><a href="/product/{{ n.id }}">View</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </div> <!-- row -->
+  
+</div>
+
+{% endblock %}
